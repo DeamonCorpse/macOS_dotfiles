@@ -1,2 +1,3 @@
 # dotfiles
-Storage for my dotfiles
+
+## Storage for my dotfiles
