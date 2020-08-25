@@ -1,0 +1,115 @@
+# STARSHIP CONFIGURATION
+# ALL option are explained at "https://starship.rs/config/"" and
+# "https://starship.rs/advanced-config/#custom-pre-prompt-and-pre-execution-commands-in-bash"
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = false     #Default is true
+
+# PROMPT
+# Don't print a new line at the start of the prompt
+add_newline = false	# Default is false
+
+# Overwrite a default_prompt_order with a custom prompt_order
+prompt_order = [
+    "character",
+    "username",
+    "hostname",
+    "directory",
+    "git_branch",
+    "git_commit",
+    "git_state",
+    "git_status",
+]
+
+# CHARACTER Module
+[character]
+use_symbol_for_status = true
+symbol = "❯"
+error_symbol = "✗"
+style_failure = "bold red"
+style success = "bold green"
+disabled = false
+
+# Display DIRECTORY Path
+[directory]
+truncation_length = 8
+truncate_to_repo = true
+use_logical_path = true
+prefix = "in "
+style = "bold cyan"
+disabled = false
+
+[directory.substitutions]
+"/Volumes/Data" = "/Sandisk Drive"
+
+# HOSTNAME
+[hostname]
+ssh_only = true
+prefix = "<"
+suffix = ">"
+trim_at = "."
+style = "bold dimmed green"
+disabled = false
+
+# USERNAME
+[username]
+show_always = true
+style_root = "bold red"
+style_user = "bold yellow"
+disabled = false
+
+
+# ADVANCED CONFIGURATION
+# GIT Modules
+## GIT BRANCH
+[git_branch]
+symbol = " "
+truncation_length = 2^63 - 1
+truncation_symbol = "..."
+style = "bold purple"
+disabled = false
+
+## Commit
+[git_commit]
+commit_hash_length = 7
+prefix = "("
+suffix = ")"
+style = "bold green"
+only_detached = true    # Only show git commit hash when in detached HEAD state
+disabled = false
+
+## State
+[git_state]
+rebase = "REBASING"
+merge = "MERGING"
+revert = "REVERTING"
+progress_divider = "/"
+style = "bold yellow"
+disabled = false
+
+## Status
+[git_status]
+prefix = [
+suffix = ]
+conflicted = "="
+conflicted_count.enabled = true
+conflicted_count.style = "orange"
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇕"
+untracked = "?"
+untracked_count.enabled = true
+untracked_count.style = "red"
+modified = "!"
+modified_count.enabled = true
+modified_count.style = "red"
+staged = "+"
+staged_count.enabled = true
+staged_count.style = "red"
+deleted = "✘"
+deleted_count.enabled = true
+deleted_count.style = "red"
+show_sync_count = true
+style = "bold red"
+disabled = false

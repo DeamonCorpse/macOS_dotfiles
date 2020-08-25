@@ -1,0 +1,66 @@
+#!/bin/zsh
+
+#######################
+#  ZSHRC FILE v 2.4   #
+#######################
+# VERSION HISTORY
+# V 1.0 (Initial) - Enable colours, Command Corrections with explicit
+#					choice options, History
+# V 2.0 - Added Change Directory w/zstyling
+# V 2.1 - Added Starship Command Prompt
+# V 2.2 - Added Compinstall Lines
+# V 2.3 - Small Code Optimizations
+# V 2.4 - Added aliases source. Moved history to env file
+
+#######################
+# UNIVERSAL SETTINGS  #
+#######################
+# Enable Terminal Colours
+autoload -U colors && colors
+
+# Enable Starship Command Prompt
+eval "$(starship init zsh)"
+
+# Default Zsh Configuration Lines Added by Compinstall
+zstyle ':completion:*' completer _expand _complete _ignored _approximate
+zstyle ':completion:*' expand prefix suffix
+zstyle ':completion:*' insert-unambiguous false
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-suffixes true
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=** r:|=**' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
+zstyle ':completion:*' menu select=10
+zstyle ':completion:*' original true
+zstyle ':completion:*' preserve-prefix '//[^/]##/y'
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' use-compctl true
+zstyle :compinstall filename '/Users/stephane/.zshrc'
+
+# Lines configured by zsh-newuser-install
+setopt extendedglob nomatch notify
+unsetopt beep
+bindkey -e
+
+# Aliases
+source ~/.aliases
+
+#######################
+# ZSH DEFAULT OPTIONS # 
+#######################
+# Enable Command Correction
+setopt correctall
+
+## Display Explicit Choice Options
+export SPROMPT="Correct %R to %r? [Yes, No, Abort, Edit] "
+export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color? [Yes, No, Abort, Edit] "
+
+# Enable History
+setopt appendhistory hist_ignore_all_dups hist_ignore_space hist_reduce_blanks
+
+# Enable Changing Directories
+setopt auto_cd auto_pushd pushd_ignore_dups pushdminus
+
+zstyle ':completion:*:*:cdr:*:*' menu selection
+zstyle ':completion:*' recent-dirs-insert both
+zstyle ':chpwd:*' recent-dirs-max 50
+zstyle ':chpwd:*' recent-dirs-default true
+zstyle ':chpwd:*' recent-dirs-pushd true

@@ -1,0 +1,46 @@
+#!/bin/zsh
+#######################
+#  ZSHENV FILE V 1.0  #
+#######################
+# VERSION HISTORY
+# V 1.0 (Initial)
+
+
+#######################
+#      DOTFILES       #
+#######################
+
+
+
+#######################
+#    EXPORT PATHS     #
+#######################
+
+
+
+#######################
+#         ZSH         #
+#######################
+
+export HISTFILE="~/.zhistory"                  # History filepath
+export HISTSIZE=1000                           # Maximum events for internal history
+export SAVEHIST=1000                           # Maximum events in history file
+
+
+#######################
+#  ZSH OPTIMIZATIONS  #
+#######################
+
+# Compiling Completion Dumped Files in the Background
+{
+  # Compile zcompdump, if modified, to increase startup speed.
+  zcompdump="$HOME/.zcompdump"
+  if [[ -s "$zcompdump" && (! -s "${zcompdump}.zwc" || "$zcompdump" -nt "${zcompdump}.zwc") ]]; then
+    zcompile "$zcompdump"
+  fi
+} &!
+
+
+###############################
+# EXPORT ENVIRONMENT VARIABLE #
+###############################
