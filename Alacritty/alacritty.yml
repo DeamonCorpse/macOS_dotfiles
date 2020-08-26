@@ -1,8 +1,6 @@
 #################################
 # ALACRITTY v 0.5 CONFIGURATION #
 #################################
-# VERSION HISTORY
-# V 1.0 - Initial Config
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -14,7 +12,7 @@ env:
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  TERM: alacritty
+  TERM: xterm-256color
 
 window:
   # Window dimensions (changes require restart)
@@ -146,10 +144,9 @@ font:
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the right,
   # increasing `y` moves the glyph upward.
-  glyph_offset:
-    x: 0
-    y: 0
-
+  #glyph_offset:
+  #  x: 0
+  #  y: 0
   # Thin stroke font rendering (macOS only)
   #
   # Thin strokes are suitable for retina displays, but for non-retina screens
@@ -305,7 +302,7 @@ colors:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 1.0
+background_opacity: 0.9
 #selection:
 semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
@@ -327,7 +324,7 @@ cursor:
 # the style of the active value of the normal cursor.
 #
 # See `cursor.style` for available options.
-#vi_mode_style: None
+vi_mode_style: None
 
 # If this is `true`, the cursor will be rendered as a hollow box when the
 # window is not focused.
