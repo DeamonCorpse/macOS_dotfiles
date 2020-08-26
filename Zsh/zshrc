@@ -13,9 +13,6 @@
 # V 2.4 - Fixed autoload compinit security message
 # V 2.5 - Added neofetch to load at evedry terminal instance
 
-# Run neofetch every time the terminal opens
-neofetch
-
 #######################
 # UNIVERSAL SETTINGS  #
 #######################
@@ -48,7 +45,11 @@ unsetopt beep
 bindkey -e
 
 # Aliases
-#source /Users/stephane/.aliases
+
+# cmatrix
+alias cmatrixm='cmatrix -ba' # macOS
+alias cmatrixl='cmatrix -lba' # Linux
+
 
 #######################
 # ZSH DEFAULT OPTIONS # 
@@ -74,3 +75,18 @@ zstyle ':completion:*' recent-dirs-insert both
 zstyle ':chpwd:*' recent-dirs-max 50
 zstyle ':chpwd:*' recent-dirs-default true
 zstyle ':chpwd:*' recent-dirs-pushd true
+
+
+#######################
+#     EXPORT PATHS    # 
+#######################
+
+
+
+
+#######################
+#     APP CONFIGS     # 
+#######################
+
+# Run neofetch every time the terminal opens
+neofetch
