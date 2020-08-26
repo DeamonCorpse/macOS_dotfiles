@@ -6,11 +6,11 @@
 # VERSION HISTORY
 # V 1.0 (Initial) - Enable colours, Command Corrections with explicit
 #					choice options, History
-# V 2.0 - Added Change Directory w/zstyling
+# V 2.0 - Added Change Directory w/styling
 # V 2.1 - Added Starship Command Prompt
 # V 2.2 - Added Compinstall Lines
 # V 2.3 - Small Code Optimizations
-# V 2.4 - Added aliases source. Moved history to env file
+# V 2.4 - Fixed autoload compinit security message
 
 #######################
 # UNIVERSAL SETTINGS  #
@@ -19,7 +19,7 @@
 autoload -U colors && colors
 
 # Enable Starship Command Prompt
-eval "$(starship init zsh)"
+#eval "$(starship init zsh)"
 
 # Default Zsh Configuration Lines Added by Compinstall
 zstyle ':completion:*' completer _expand _complete _ignored _approximate
@@ -35,13 +35,16 @@ zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p
 zstyle ':completion:*' use-compctl true
 zstyle :compinstall filename '/Users/stephane/.zshrc'
 
+autoload -Uz compinit 
+compinit -i             # Silently ignore all insecure files and directories
+
 # Lines configured by zsh-newuser-install
 setopt extendedglob nomatch notify
 unsetopt beep
 bindkey -e
 
 # Aliases
-source ~/.aliases
+#source /Users/stephane/.aliases
 
 #######################
 # ZSH DEFAULT OPTIONS # 
@@ -55,6 +58,9 @@ export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color? [Yes
 
 # Enable History
 setopt appendhistory hist_ignore_all_dups hist_ignore_space hist_reduce_blanks
+HISTFILE=/Users/stephane/.zhistory           # History filepath
+HISTSIZE=1000                                # Maximum events for internal history
+SAVEHIST=1000                                # Maximum events in history file
 
 # Enable Changing Directories
 setopt auto_cd auto_pushd pushd_ignore_dups pushdminus

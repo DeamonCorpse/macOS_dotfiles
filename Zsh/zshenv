@@ -22,10 +22,6 @@
 #         ZSH         #
 #######################
 
-export HISTFILE="~/.zhistory"                  # History filepath
-export HISTSIZE=1000                           # Maximum events for internal history
-export SAVEHIST=1000                           # Maximum events in history file
-
 
 #######################
 #  ZSH OPTIMIZATIONS  #
@@ -34,7 +30,7 @@ export SAVEHIST=1000                           # Maximum events in history file
 # Compiling Completion Dumped Files in the Background
 {
   # Compile zcompdump, if modified, to increase startup speed.
-  zcompdump="$HOME/.zcompdump"
+  zcompdump="/Users/stephane/.zcompdump"
   if [[ -s "$zcompdump" && (! -s "${zcompdump}.zwc" || "$zcompdump" -nt "${zcompdump}.zwc") ]]; then
     zcompile "$zcompdump"
   fi

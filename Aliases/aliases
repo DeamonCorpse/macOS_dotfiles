@@ -5,19 +5,15 @@ alias shutdown='sudo shutdown now'
 alias restart='sudo reboot'
 alias suspend='sudo pm-suspend'
 
-# display "big" files > 500M
-alias bigf= 'find / -xdev -type f -size +500M'
-
-
 
 ##################
 #  ZSH ALIASES   #
 ##################
 # Make sure I use zsh when calling a script with sh
-alias sh='zsh'
+#alias sh='zsh'
 
-alias d='dirs -v'
-for index ({1..9}) alias "$index"="cd +${index}"; unset index # directory stack
+#alias d='dirs -v'
+#for index ({1..9}) alias "$index"="cd +${index}"; unset index # directory stack
 
 
 
@@ -26,33 +22,28 @@ for index ({1..9}) alias "$index"="cd +${index}"; unset index # directory stack
 ##################
 alias ls='ls --color=auto'
 alias lsl='ls -l'
-alias ll='ls -lahF'
-alias lls='ls -lahFtr'
-alias la='ls -A'
-alias l='ls -CF'
+alias lsal='ls -al'
+alias la='ls -a'
 
 
 ##################
 #   CP ALIASES   #
 ##################
-alias cp='cp -iv'
-alias mv='mv -iv'
-alias rm='rm -i'
-alias la='ls -alh'
+#alias cp='cp -iv'
+#alias mv='mv -iv'
+#alias rm='rm -i'
 
 
 ##################
 #  GREP ALIASES  #
 ##################
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
+#alias grep='grep --color=auto'
 
 
 ##################
 #  PING ALIASES  #
 ##################
-alias pg='ping 8.8.8.8'
+#alias pg='ping 8.8.8.8'
 
 
 ##################
@@ -65,10 +56,6 @@ alias pacu='sudo pacman -Syu'             # update
 alias pacr='sudo pacman -R'               # remove package but not dependencies
 alias pacrr='sudo pacman -Rs'             # remove package with unused dependencies by other softwares
 alias pacrc='sudo pacman -Sc'             # remove pacman's cache
-alias pacro='pacman -Rns $(pacman -Qtdq)'
-alias pacrl='rm /var/lib/pacman/db.lck'   # pacman remove locks
-alias pacls="sudo pacman -Qe"
-alias pacc='sudo pacman -Sc'
 alias paccc='sudo pacman -Scc'            # empty the whole cache
 
 
@@ -92,7 +79,7 @@ alias gr='git remote'
 alias grs='git remote show'
 alias glo='git log --pretty="oneline"'
 alias glol='git log --graph --oneline --decorate'
-alias gclean="git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d" # Delete local branch merged with master
+#alias gclean="git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d" # Delete local branch merged with master
 alias gblog="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"                                                              # git log for each branches
 alias gsub="git submodule update --remote"                                                        # pull submodules
 
@@ -114,6 +101,5 @@ alias dockce='docker-compose run --rm'
 ##################
 #  PERS ALIASES  #
 ##################
-alias home="$HOME/workspace"        # general workspace
-alias dot="$HOME/.dotfiles"         # dotfiles
+
 
