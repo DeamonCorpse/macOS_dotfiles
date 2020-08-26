@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 #######################
-#  ZSHRC FILE v 2.4   #
+#  ZSHRC FILE v 2.5   #
 #######################
 # VERSION HISTORY
 # V 1.0 (Initial) - Enable colours, Command Corrections with explicit
@@ -11,6 +11,10 @@
 # V 2.2 - Added Compinstall Lines
 # V 2.3 - Small Code Optimizations
 # V 2.4 - Fixed autoload compinit security message
+# V 2.5 - Added neofetch to load at evedry terminal instance
+
+# Run neofetch every time the terminal opens
+neofetch
 
 #######################
 # UNIVERSAL SETTINGS  #
