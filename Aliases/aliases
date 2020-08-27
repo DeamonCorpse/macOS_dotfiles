@@ -1,11 +1,11 @@
 #################### BREW ####################
-alias bde='brew deps'                  # Lists package dependencies
-alias bh='brew help'                        # Opens help page
-alias bi='brew install'                     # Installs package
-alias bl='brew list'                        # List installed packages
-alias bt='brew uninstall'                   # UninsTalls a package
-alias bupd='brew update'                    # Installs all updates
-alias bupg='brew upgrade'              # Installs package upgrade
+alias bde='brew deps'                   # Lists package dependencies
+alias bh='brew help'                    # Opens help page
+alias bi='sudo brew install'            # Installs package
+alias bl='brew list'                    # List installed packages
+alias bt='sudo brew uninstall'          # UninsTalls a package
+alias bupd='sudo brew update'           # Installs all updates
+alias bupg='sudo brew upgrade'          # Installs package upgrade
 
 
 #################### CMATRIX ####################
