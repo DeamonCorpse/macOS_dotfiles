@@ -1,46 +1,25 @@
-############
-#  SYSTEM  #
-############
-alias shutdown='sudo shutdown now'
-alias restart='sudo reboot'
-alias suspend='sudo pm-suspend'
+#################### BREW ####################
+brew bde='brew deps'                        # Lists package dependencies
+alias bh='brew help'                        # Opens help page
+alias bi='brew install'                     # Installs package
+alias bl='brew list'                        # List installed packages
+alias bt='brew uninstall'                   # UninsTalls a package
+alias bupd='brew update'                    # Installs all updates
+brew bupg='brew upgrade'                    # Installs package upgrade
 
 
-############
-#   MISC   #
-############
-alias cd1='cd ..'                       # cd 1 directory up
-alias cd2='cd ../..'                    # cd 2 directories up
-alias cd3='cd ../../..'                 # cd 3 directories up
-alias cl='clear'                        # Clear terminal window
-alias hist='history'                    # List past commands typed in the current terminal session
-alias sourcet='source ~/.zshrc'         # Refresh/restart terminal
+#################### CMATRIX ####################
+alias cmatrixm='cmatrix -ba' # macOS
+alias cmatrixl='cmatrix -lba' # Linux
 
 
-###########
-#   LS    #
-###########
-alias lsa='ls -aA'            # List all files including hidden ones without the . & ..
-alias lsl='ls -lA'            # Detailed listing without the . & ..
-alias lsal='ls -alA'          # Detailed listing including hidden files without the . & ..
+#################### DOCKER ####################
+alias docki="docker inspect"                                                    # display the information about a container
+alias docke='docker exec -it'                                                   # going inside a container
+alias dockimg='docker images'                                                   # list images installed
 
 
-###########
-# PACMAN  #
-###########
-alias paci='sudo pacman -S'               # Install
-alias pachi='sudo pacman -Ql'             # Has Installed - what files where installed in a package
-alias pacs='sudo pacman -Ss'              # Search
-alias pacu='sudo pacman -Syu'             # Update
-alias pacr='sudo pacman -R'               # Remove package but not dependencies
-alias pac2r='sudo pacman -Rs'             # Remove package with unused dependencies by other softwares
-alias pacrc='sudo pacman -Sc'             # Remove pacman's cache
-alias pac3c='sudo pacman -Scc'            # Empty the whole cache
-
-
-###########
-#   GIT   #
-###########
+#################### GIT ####################
 alias ga='git add'
 alias gb='git branch '
 alias gc='git commit'
@@ -55,18 +34,33 @@ alias gplo='git pull origin'
 alias gs='git status'
 
 
-###########
-# DOCKER  #
-###########
-alias docki="docker inspect"                                                    # display the information about a container
-alias docke='docker exec -it'                                                   # going inside a container
-alias dockimg='docker images'                                                   # list images installed
+#################### LS ####################
+alias lsa='ls -aA'            # List all files including hidden ones without the . & ..
+alias lsl='ls -lA'            # Detailed listing without the . & ..
+alias lsal='ls -alA'          # Detailed listing including hidden files without the . & ..
 
 
-###########
-# CMATRIX #
-###########
-alias cmatrixm='cmatrix -ba' # macOS
-alias cmatrixl='cmatrix -lba' # Linux
+#################### MISC ####################
+alias cd1='cd ..'                       # cd 1 directory up
+alias cd2='cd ../..'                    # cd 2 directories up
+alias cd3='cd ../../..'                 # cd 3 directories up
+alias cl='clear'                        # Clear terminal window
+alias hist='history'                    # List past commands typed in the current terminal session
+alias sourcet='source ~/.zshrc'         # Refresh/restart terminal
 
 
+#################### PACMAN ####################
+alias paci='sudo pacman -S'               # Install
+alias pachi='sudo pacman -Ql'             # Has Installed - what files where installed in a package
+alias pacs='sudo pacman -Ss'              # Search
+alias pacu='sudo pacman -Syu'             # Update
+alias pacr='sudo pacman -R'               # Remove package but not dependencies
+alias pac2r='sudo pacman -Rs'             # Remove package with unused dependencies by other softwares
+alias pacrc='sudo pacman -Sc'             # Remove pacman's cache
+alias pac3c='sudo pacman -Scc'            # Empty the whole cache
+
+
+#################### SYSTEM ####################
+alias shutdown='sudo shutdown now'
+alias restart='sudo reboot'
+alias suspend='sudo pm-suspend'
