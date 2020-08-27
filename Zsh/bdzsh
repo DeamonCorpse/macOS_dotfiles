@@ -1,0 +1,1 @@
+source /Users/stephane/.config/zsh_plugins/bd.zsh
