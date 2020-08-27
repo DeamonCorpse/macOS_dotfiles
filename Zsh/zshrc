@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 #######################
-#  ZSHRC FILE v 2.5   #
+#  ZSHRC FILE v 2.6   #
 #######################
 # VERSION HISTORY
 # V 1.0 (Initial) - Enable colours, Command Corrections with explicit
@@ -11,7 +11,8 @@
 # V 2.2 - Added Compinstall Lines
 # V 2.3 - Small Code Optimizations
 # V 2.4 - Fixed autoload compinit security message
-# V 2.5 - Added neofetch to load at evedry terminal instance
+# V 2.5 - Added neofetch to load at every terminal instance
+# V 2.6 - Added plugins & theme
 
 #######################
 # UNIVERSAL SETTINGS  #
@@ -20,7 +21,7 @@
 autoload -U colors && colors
 
 # Enable Starship Command Prompt
-#eval "$(starship init zsh)"
+eval "$(starship init zsh)"
 
 # Default Zsh Configuration Lines Added by Compinstall
 zstyle ':completion:*' completer _expand _complete _ignored _approximate
@@ -45,6 +46,7 @@ unsetopt beep
 bindkey -e
 
 # Aliases
+[ -f "$HOME/zsh/.aliases" ] && source "$HOME/zsh/.aliases"
 
 # cmatrix
 alias cmatrixm='cmatrix -ba' # macOS
@@ -78,15 +80,33 @@ zstyle ':chpwd:*' recent-dirs-pushd true
 
 
 #######################
-#     EXPORT PATHS    # 
-#######################
-
-
-
-
-#######################
 #     APP CONFIGS     # 
 #######################
 
 # Run neofetch every time the terminal opens
 neofetch
+
+
+#######################
+#  PLUGINS & THEMES   # 
+#######################
+
+# Auto-Completions
+# Github Repo @ https://github.com/zsh-users/zsh-completions
+# Completion List @ https://github.com/zsh-users/zsh-completions/tree/master/src
+source /Users/stephane/.config/zsh_plugins/zsh-completions.plugin.zsh
+
+# Z @ https://github.com/rupa/z
+source /Users/stephane/.config/zsh_plugins/z.sh
+
+# Zsh Autosuggestions @ https://github.com/zsh-users/zsh-autosuggestions
+source /Users/stephane/.config/zsh_plugins/zsh-autosuggestions.zsh
+
+# Jumping To A Parent Directory With bd
+autoload -Uz bd; bd
+
+# Zsh Syntax Highlighting @ https://github.com/zsh-users/zsh-syntax-highlighting
+source /Users/stephane/.config/zsh_plugins/zsh-syntax-highlighting.zs
+
+# Powerlevel10k Theme @ https://github.com/romkatv/powerlevel10k
+source /Users/stephane/.config/zsh_plugins/powerlevel10k.zsh-theme
