@@ -1,105 +1,72 @@
-##################
-# SYSTEM ALIASES #
-##################
+############
+#  SYSTEM  #
+############
 alias shutdown='sudo shutdown now'
 alias restart='sudo reboot'
 alias suspend='sudo pm-suspend'
 
 
-##################
-#  ZSH ALIASES   #
-##################
-# Make sure I use zsh when calling a script with sh
-#alias sh='zsh'
-
-#alias d='dirs -v'
-#for index ({1..9}) alias "$index"="cd +${index}"; unset index # directory stack
-
-
-
-##################
-#  LSH ALIASES   #
-##################
-alias ls='ls --color=auto'
-alias lsl='ls -l'
-alias lsal='ls -al'
-alias la='ls -a'
+############
+#   MISC   #
+############
+alias cd1='cd ..'                       # cd 1 directory up
+alias cd2='cd ../..'                    # cd 2 directories up
+alias cd3='cd ../../..'                 # cd 3 directories up
+alias cl='clear'                        # Clear terminal window
+alias hist='history'                    # List past commands typed in the current terminal session
+alias sourcet='source ~/.zshrc'         # Refresh/restart terminal
 
 
-##################
-#   CP ALIASES   #
-##################
-#alias cp='cp -iv'
-#alias mv='mv -iv'
-#alias rm='rm -i'
+###########
+#   LS    #
+###########
+alias lsa='ls -aA'            # List all files including hidden ones without the . & ..
+alias lsl='ls -lA'            # Detailed listing without the . & ..
+alias lsal='ls -alA'          # Detailed listing including hidden files without the . & ..
 
 
-##################
-#  GREP ALIASES  #
-##################
-#alias grep='grep --color=auto'
+###########
+# PACMAN  #
+###########
+alias paci='sudo pacman -S'               # Install
+alias pachi='sudo pacman -Ql'             # Has Installed - what files where installed in a package
+alias pacs='sudo pacman -Ss'              # Search
+alias pacu='sudo pacman -Syu'             # Update
+alias pacr='sudo pacman -R'               # Remove package but not dependencies
+alias pac2r='sudo pacman -Rs'             # Remove package with unused dependencies by other softwares
+alias pacrc='sudo pacman -Sc'             # Remove pacman's cache
+alias pac3c='sudo pacman -Scc'            # Empty the whole cache
 
 
-##################
-#  PING ALIASES  #
-##################
-#alias pg='ping 8.8.8.8'
-
-
-##################
-# PACMAN ALIASES #
-##################
-alias paci='sudo pacman -S'               # install
-alias pachi='sudo pacman -Ql'             # Pacman Has Installed - what files where installed in a package
-alias pacs='sudo pacman -Ss'              # search
-alias pacu='sudo pacman -Syu'             # update
-alias pacr='sudo pacman -R'               # remove package but not dependencies
-alias pacrr='sudo pacman -Rs'             # remove package with unused dependencies by other softwares
-alias pacrc='sudo pacman -Sc'             # remove pacman's cache
-alias paccc='sudo pacman -Scc'            # empty the whole cache
-
-
-##################
-#  GIT ALIASES   #
-##################
-alias gs='git status'
+###########
+#   GIT   #
+###########
 alias ga='git add'
-alias gp='git push'
-alias gpo='git push origin'
-alias gtd='git tag --delete'
-alias gtdr='git tag --delete origin'
-alias gr='git branch -r'                                                                           # display remote branch
-alias gplo='git pull origin'
 alias gb='git branch '
 alias gc='git commit'
-alias gd='git diff'
 alias gco='git checkout '
+alias gd='git diff'
 alias gl='git log'
-alias gr='git remote'
-alias grs='git remote show'
 alias glo='git log --pretty="oneline"'
 alias glol='git log --graph --oneline --decorate'
-#alias gclean="git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d" # Delete local branch merged with master
-alias gblog="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"                                                              # git log for each branches
-alias gsub="git submodule update --remote"                                                        # pull submodules
+alias gp='git push'
+alias gpo='git push origin'
+alias gplo='git pull origin'
+alias gs='git status'
 
 
-##################
-# DOCKER ALIASES #
-##################
+###########
+# DOCKER  #
+###########
 alias docki="docker inspect"                                                    # display the information about a container
-alias docke='docker exec -t -i'                                                 # going inside a container
-alias dockDE='docker rm $(docker ps -a -q) && docker rmi $(docker images -q)'   # delete every containers / images
-alias dockstats='docker stats $(docker ps -q)'                                  # stats on images
-alias dockls='docker ps'                                                        # list docker containers
+alias docke='docker exec -it'                                                   # going inside a container
 alias dockimg='docker images'                                                   # list images installed
-alias dockprune='docker system prune -a'                                        # prune everything
-alias dockceu='docker-compose run --rm -u $(id -u):$(id -g)'                    # run as the host user
-alias dockce='docker-compose run --rm'
 
 
-##################
-#  PERS ALIASES  #
-##################
+###########
+# CMATRIX #
+###########
+alias cmatrixm='cmatrix -ba' # macOS
+alias cmatrixl='cmatrix -lba' # Linux
 
 
