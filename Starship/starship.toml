@@ -54,7 +54,7 @@ disabled = false
 
 # USERNAME
 [username]
-show_always = true
+show_always = false
 style_root = "bold red"
 style_user = "bold yellow"
 disabled = false
