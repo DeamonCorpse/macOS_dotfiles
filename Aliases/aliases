@@ -61,6 +61,7 @@ alias pac3c='sudo pacman -Scc'            # Empty the whole cache
 
 
 #################### SYSTEM ####################
+alias sua='su Administrator'
 alias shutdown='sudo shutdown now'
 alias restart='sudo reboot'
 alias suspend='sudo pm-suspend'
