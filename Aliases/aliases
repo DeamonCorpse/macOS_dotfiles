@@ -1,11 +1,11 @@
 #################### BREW ####################
-brew bde='brew deps'                        # Lists package dependencies
+alias brew bde='brew deps'                  # Lists package dependencies
 alias bh='brew help'                        # Opens help page
 alias bi='brew install'                     # Installs package
 alias bl='brew list'                        # List installed packages
 alias bt='brew uninstall'                   # UninsTalls a package
 alias bupd='brew update'                    # Installs all updates
-brew bupg='brew upgrade'                    # Installs package upgrade
+alias brew bupg='brew upgrade'              # Installs package upgrade
 
 
 #################### CMATRIX ####################
