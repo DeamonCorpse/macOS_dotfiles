@@ -1,8 +1,6 @@
 #!/bin/zsh
 
-#############################
-#  MACOS ZSHRC FILE v 2.7   #
-#############################
+####################### MACOS ZSHRC FILE v 2.8 #######################
 # VERSION HISTORY
 # V 1.0 (Initial) - Enable colours, Command Corrections with explicit
 #					choice options, History
@@ -14,24 +12,23 @@
 # V 2.5 - Added neofetch to load at every terminal instance
 # V 2.6 - Removed starship. Added plugins & theme
 # V 2.7 - Added Powerlevel10k config, removed bd plugin. Moved aliases to central file
+# V 2.8 - Added lf integrations. Cosmetic cleanup
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+####################### STAY AT THE TOP #######################
+# ENABLE TERMINAL COLOURS
+autoload -U colors && colors
+
+# ENABLE POWERLEVEL10K INSTANT PROMPT. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Run neofetch every time the terminal opens
+# RUN NEOFETCH every time the terminal opens
 neofetch
 
-#######################
-# UNIVERSAL SETTINGS  #
-#######################
-# Enable Terminal Colours
-autoload -U colors && colors
-
-# Default Zsh Configuration Lines Added by Compinstall
+# DEFAULT ZSH CONFIGURATION Lines Added by Compinstall
 zstyle ':completion:*' completer _expand _complete _ignored _approximate
 zstyle ':completion:*' expand prefix suffix
 zstyle ':completion:*' insert-unambiguous false
@@ -45,39 +42,56 @@ zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p
 zstyle ':completion:*' use-compctl true
 zstyle :compinstall filename '/Users/stephane/.zshrc'
 
-# Lines configured by zsh-newuser-install
 setopt extendedglob nomatch notify
 unsetopt beep
 bindkey -e
 
-# Tab completion. "-i" to silently ignore all insecure files and directories
+####################### #######################
+# LF INTEGRATION @ https://github.com/gokcehan/lf
+## Docummentation @ https://pkg.go.dev/github.com/gokcehan/lf?tab=doc
+fpath=(/Users/stephane/.config/zsh_plugins/lf/_lf $fpath)
+
+## COMPLETION GENERATOR @ https://github.com/RobSis/zsh-completion-generator
+source /Users/stephane/.config/zsh_plugins/zsh-completion-generator.plugin.zsh
+
+### Use LF to switch directories and BIND it to ctrl-e
+lfcd () {
+    tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+    fi
+}
+bindkey -s '^e' 'lfcd\n'
+
+# Enable TAB COMPLETION. "-i" to silently ignore all insecure files and directories
 autoload -Uz compinit          
 compinit -i 
 _comp_options+=(globdots)		# Include hidden files.
 
 zstyle ':completion:*' menu select
 
-# Aliases
+# ALIASES
 [ -f "/Users/stephane/.aliases" ] && source "/Users/stephane/.aliases"
 
 
-#######################
-# ZSH DEFAULT OPTIONS # 
-#######################
-# Enable Command Correction
+####################### ZSH DEFAULT OPTIONS #######################
+# Enable COMMAND CORRECTION
 setopt correctall
 
 ## Display Explicit Choice Options
 export SPROMPT="Correct %R to %r? [Yes, No, Abort, Edit] "
 export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color? [Yes, No, Abort, Edit] "
 
-# Enable History
+# Enable HISTORY
 setopt appendhistory hist_ignore_all_dups hist_ignore_space hist_reduce_blanks
 HISTFILE=/Users/stephane/.zhistory           # History filepath
 HISTSIZE=200                                # Maximum events for internal history
 SAVEHIST=200                                # Maximum events in history file
 
-# Enable Changing Directories
+# Enable CHANGE DIRECTORIES
 setopt auto_cd auto_pushd pushd_ignore_dups pushdminus
 
 zstyle ':completion:*:*:cdr:*:*' menu selection
@@ -86,11 +100,7 @@ zstyle ':chpwd:*' recent-dirs-max 50
 zstyle ':chpwd:*' recent-dirs-default true
 zstyle ':chpwd:*' recent-dirs-pushd true
 
-
-#######################
-#  PLUGINS & THEMES   # 
-#######################
-
+####################### PLUGINS & THEMES  #######################
 # Auto-Completions
 # Github Repo @ https://github.com/zsh-users/zsh-completions
 # Completion List @ https://github.com/zsh-users/zsh-completions/tree/master/src
@@ -102,12 +112,13 @@ source /Users/stephane/.config/zsh_plugins/z.sh
 # Zsh Autosuggestions @ https://github.com/zsh-users/zsh-autosuggestions
 source /Users/stephane/.config/zsh_plugins/zsh-autosuggestions.zsh
 
-# Zsh Syntax Highlighting @ https://github.com/zsh-users/zsh-syntax-highlighting
-source /Users/stephane/.config/zsh_plugins/zsh-syntax-highlighting.zs
-
 # Powerlevel10k Theme @ https://github.com/romkatv/powerlevel10k
 # Run setup with "p10k configure"
 source /Users/stephane/.config/zsh_plugins/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+####################### ALWAYS LAST  #######################
+# Zsh Syntax Highlighting @ https://github.com/zsh-users/zsh-syntax-highlighting
+source /Users/stephane/.config/zsh_plugins/zsh-syntax-highlighting.zs
