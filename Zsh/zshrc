@@ -1,8 +1,8 @@
 #!/bin/zsh
 
-#######################
-#  ZSHRC FILE v 2.7   #
-#######################
+#############################
+#  MACOS ZSHRC FILE v 2.7   #
+#############################
 # VERSION HISTORY
 # V 1.0 (Initial) - Enable colours, Command Corrections with explicit
 #					choice options, History
@@ -12,11 +12,8 @@
 # V 2.3 - Small Code Optimizations
 # V 2.4 - Fixed autoload compinit security message
 # V 2.5 - Added neofetch to load at every terminal instance
-# V 2.6 - Added plugins & theme
-# V 2.7 - Added Powerlevel10k config
-
-# Run neofetch every time the terminal opens
-neofetch
+# V 2.6 - Removed starship. Added plugins & theme
+# V 2.7 - Added Powerlevel10k config, removed bd plugin. Moved aliases to central file
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -24,6 +21,9 @@ neofetch
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
+# Run neofetch every time the terminal opens
+neofetch
 
 #######################
 # UNIVERSAL SETTINGS  #
@@ -45,20 +45,20 @@ zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p
 zstyle ':completion:*' use-compctl true
 zstyle :compinstall filename '/Users/stephane/.zshrc'
 
-autoload -Uz compinit   # Tab completion system
-compinit -i             # Silently ignore all insecure files and directories
-
 # Lines configured by zsh-newuser-install
 setopt extendedglob nomatch notify
 unsetopt beep
 bindkey -e
 
-# Aliases
-[ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
+# Tab completion. "-i" to silently ignore all insecure files and directories
+autoload -Uz compinit          
+compinit -i 
+_comp_options+=(globdots)		# Include hidden files.
 
-# cmatrix
-alias cmatrixm='cmatrix -ba' # macOS
-alias cmatrixl='cmatrix -lba' # Linux
+zstyle ':completion:*' menu select
+
+# Aliases
+[ -f "/Users/stephane/.aliases" ] && source "/Users/stephane/.aliases"
 
 
 #######################
@@ -74,8 +74,8 @@ export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color? [Yes
 # Enable History
 setopt appendhistory hist_ignore_all_dups hist_ignore_space hist_reduce_blanks
 HISTFILE=/Users/stephane/.zhistory           # History filepath
-HISTSIZE=1000                                # Maximum events for internal history
-SAVEHIST=1000                                # Maximum events in history file
+HISTSIZE=200                                # Maximum events for internal history
+SAVEHIST=200                                # Maximum events in history file
 
 # Enable Changing Directories
 setopt auto_cd auto_pushd pushd_ignore_dups pushdminus
@@ -85,11 +85,6 @@ zstyle ':completion:*' recent-dirs-insert both
 zstyle ':chpwd:*' recent-dirs-max 50
 zstyle ':chpwd:*' recent-dirs-default true
 zstyle ':chpwd:*' recent-dirs-pushd true
-
-
-#######################
-#     APP CONFIGS     # 
-#######################
 
 
 #######################
@@ -106,9 +101,6 @@ source /Users/stephane/.config/zsh_plugins/z.sh
 
 # Zsh Autosuggestions @ https://github.com/zsh-users/zsh-autosuggestions
 source /Users/stephane/.config/zsh_plugins/zsh-autosuggestions.zsh
-
-# Jumping To A Parent Directory With bd
-autoload -Uz bd; bd
 
 # Zsh Syntax Highlighting @ https://github.com/zsh-users/zsh-syntax-highlighting
 source /Users/stephane/.config/zsh_plugins/zsh-syntax-highlighting.zs
