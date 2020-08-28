@@ -121,4 +121,4 @@ source /Users/stephane/.config/zsh_plugins/powerlevel10k.zsh-theme
 
 ####################### ALWAYS LAST  #######################
 # Zsh Syntax Highlighting @ https://github.com/zsh-users/zsh-syntax-highlighting
-source /Users/stephane/.config/zsh_plugins/zsh-syntax-highlighting.zs
+source /Users/stephane/.config/zsh_plugins/zsh-syntax-highlighting.zsh
