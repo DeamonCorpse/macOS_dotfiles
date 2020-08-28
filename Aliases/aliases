@@ -47,7 +47,7 @@ alias cd3='cd ../../..'                 # cd 3 directories up
 alias cl='clear'                        # Clear terminal window
 alias hist='history'                    # List past commands typed in the current terminal session
 alias sourcet='source ~/.zshrc'         # Refresh/restart terminal
-
+alias lns='ln -s'                       # Symlink command
 
 #################### PACMAN ####################
 alias paci='sudo pacman -S'               # Install
