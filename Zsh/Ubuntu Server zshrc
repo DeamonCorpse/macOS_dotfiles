@@ -53,7 +53,7 @@ export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color? [Yes
 
 
 # Enable Change Directory
-setopt auto-cd auto_pushd pushd_ignore_dups pushdminus
+setopt auto_cd auto_pushd pushd_ignore_dups pushdminus
 
 zstyle ':completion:*:*:cdr:*:*' menu selection
 zstyle ':completion:*' recent-dirs-insert both
