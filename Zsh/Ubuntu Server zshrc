@@ -17,7 +17,6 @@ bindkey -e
 
 # History
 setopt histignorealldups sharehistory appendhistory histreduceblanks histignorespace
-
 HISTSIZE=200
 SAVEHIST=200
 HISTFILE=~/.zsh_history
@@ -59,3 +58,26 @@ zstyle ':completion:*' recent-dirs-insert both
 zstyle ':chpwd:*' recent-dirs-max 50
 zstyle ':chpwd:*' recent-dirs-default true
 zstyle ':chpwd:*' recent-dirs-pushd true
+
+# Misc
+setopt extendedglob nomatch notify
+unsetopt beep
+
+
+####################### PLUGINS & THEMES  #######################
+# Auto-Completions
+# Github Repo @ https://github.com/zsh-users/zsh-completions
+# Completion List @ https://github.com/zsh-users/zsh-completions/tree/master/src
+source ~/zsh_plugins/zsh-completions/zsh-completions.plugin.zsh
+
+# Powerlevel10k Theme @ https://github.com/romkatv/powerlevel10k
+# Run setup with "p10k configure"
+source ~/zsh_plugins/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+####################### ALWAYS LAST #######################
+# Zsh Syntax Highlighting @ https://github.com/zsh-users/zsh-syntax-highlighting
+source ~/zsh_plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
