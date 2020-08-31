@@ -21,9 +21,12 @@ alias docs='cd /Volumes/home/Drive/MackbookPro Documents'                      #
 
 
 #################### DOCKER ####################
-alias docki="docker inspect"                                                    # display the information about a container
-alias docke='docker exec -it'                                                   # going inside a container
-alias dockimg='docker images'                                                   # list images installed
+alias docke='docker exec -it'                                                   # Going inside a container
+alias docki="docker inspect"                                                    # Display the information about a container
+alias dockimg='docker images'                                                   # List images installed
+alias dockps='docker ps'                                                        # List running containers
+alias dockr='docker run'                                                        # Run a container
+
 
 
 #################### GIT ####################
@@ -42,13 +45,13 @@ alias gs='git status'
 
 
 #################### LS ####################
-alias lsa='ls -aA'            # List all files including hidden ones without the . & ..
-alias lsl='ls -lA'            # Detailed listing without the . & ..
-alias lsal='ls -alA'          # Detailed listing including hidden files without the . & ..
+alias lsa='ls -ahA'            # List all files including hidden ones without the . & .. in a human readable format
+alias lsl='ls -lhA'            # Detailed listing without the . & .. in a human readable format
+alias lsal='ls -ahlA'          # Detailed listing including hidden files without the . & .. in a human readable format
 
 
 #################### MISC ####################
-alias cd1='cd ..'                       # cd 1 directory up
+alias cd='cd ..'                        # cd 1 directory up
 alias cd2='cd ../..'                    # cd 2 directories up
 alias cd3='cd ../../..'                 # cd 3 directories up
 alias cl='clear'                        # Clear terminal window
@@ -72,4 +75,3 @@ alias pac3c='sudo pacman -Scc'            # Empty the whole cache
 alias sua='su Administrator'
 alias shutdown='sudo shutdown now'
 alias restart='sudo reboot'
-alias suspend='sudo pm-suspend'
