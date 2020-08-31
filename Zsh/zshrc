@@ -18,13 +18,6 @@
 # ENABLE TERMINAL COLOURS
 autoload -U colors && colors
 
-# ENABLE POWERLEVEL10K INSTANT PROMPT. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # RUN NEOFETCH every time the terminal opens
 neofetch
 
@@ -45,6 +38,13 @@ zstyle :compinstall filename '/Users/stephane/.zshrc'
 setopt extendedglob nomatch notify
 unsetopt beep
 bindkey -e
+
+# ENABLE POWERLEVEL10K INSTANT PROMPT. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 ####################### #######################
 # LF INTEGRATION @ https://github.com/gokcehan/lf
