@@ -10,10 +10,21 @@ promptinit
 # Command Correction
 setopt correctall
 
+# Aliases
+alias shutdown='sudo shutdown now'
+alias restart='sudo reboot'
+alias sourcet='source ~/.zshrc'         # Refresh/restart terminal
 
-# Use emacs keybindings even if our EDITOR is set to vi
-bindkey -e
+alias lns='ln -s'                       # Symlink command
+alias lsa='ls -ahA'                     # List all files including hidden ones without the . & .. in a human readable format
+alias lsl='ls -lhA'                     # Detailed listing without the . & .. in a human readable format
+alias lsal='ls -ahlA'                   # Detailed listing including hidden files without the . & .. in a human readable format
 
+alias docke='sudo docker exec -it'      # Going inside a container
+alias docki="sudo docker inspect"       # Display the information about a container
+alias dockimg='sudo docker images'      # List images installed
+alias dockps='sudo docker ps'           # List running containers
+alias dockr='sudo docker run'           # Run a container
 
 # History
 setopt histignorealldups sharehistory appendhistory histreduceblanks histignorespace
