@@ -19,8 +19,11 @@ alias vi='sudo vi'                              # Run vim as admin
 alias zshrc='sudo nano ~/.zshrc'                # Edit .zshrc file
 alias ufw='sudo ufw'                            # Run UFW as admin
 alias sshd='sudo nano /etc/ssh/sshd_config'     # Edit sshd_config file
+
 alias apt='sudo apt'                            # Using apt
 alias snap='sudo snap'                          # Using snap
+
+alias bashtop='sudo bashtop'                    # Using bashtop
 
 alias lns='ln -s'                       # Symlink command
 alias lsa='ls -ahA'                     # List all files including hidden ones without the . & .. in a human readable format
