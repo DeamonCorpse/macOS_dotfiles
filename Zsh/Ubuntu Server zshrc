@@ -39,7 +39,7 @@ alias dmidecode='sudo dmidecode'            # Using dmidecode
 alias hdparm='sudo hdparm'                  # Using hdparm
 alias blkid='sudo blkid'                    # Using blkid
 
-alias bashtop='sudo bashtop'                    # Using bashtop
+alias bashtop='sudo bashtop'                # Using bashtop
 
 alias lns='ln -s'                       # Symlink command
 alias lsa='ls -ahA'                     # List all files including hidden ones without the . & .. in a human readable format
