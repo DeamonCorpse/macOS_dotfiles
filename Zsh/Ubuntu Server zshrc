@@ -23,6 +23,22 @@ alias sshd='sudo nano /etc/ssh/sshd_config'     # Edit sshd_config file
 alias apt='sudo apt'                            # Using apt
 alias snap='sudo snap'                          # Using snap
 
+alias lscpu='sudo lscpu'                    # Using lscpu
+alias lshw='sudo lshw'                      # Using lshw
+alias hwinfo='sudo hwinfo'                  # Using hwinfo
+alias lspci='sudo lspci'                    # Using lspci
+alias lsscsi='sudo lsscsi'                  # Using lsscsi
+alias lsusb='sudo lsusb'                    # Using lsusb
+alias pydf='sudo pydf'                      # Using pydf
+alias lsblk='sudo lsblk'                    # Using lsblk
+alias df='sudo df'                          # Using df
+alias fdisk='sudo fdisk'                    # Using fdisk
+alias mount='sudo mount'                    # Using mount
+alias free='sudo free'                      # Using free
+alias dmidecode='sudo dmidecode'            # Using dmidecode
+alias hdparm='sudo hdparm'                  # Using hdparm
+alias blkid='sudo blkid'                    # Using blkid
+
 alias bashtop='sudo bashtop'                    # Using bashtop
 
 alias lns='ln -s'                       # Symlink command
