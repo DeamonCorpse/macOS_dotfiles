@@ -42,9 +42,9 @@ bindkey -e
 # ENABLE POWERLEVEL10K INSTANT PROMPT. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
 
 ####################### #######################
 # LF INTEGRATION @ https://github.com/gokcehan/lf
@@ -87,7 +87,7 @@ export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color? [Yes
 
 # Enable HISTORY
 setopt appendhistory hist_ignore_all_dups hist_ignore_space hist_reduce_blanks
-HISTFILE=/Users/stephane/.zhistory           # History filepath
+HISTFILE=/Users/stephane/.zhistory          # History filepath
 HISTSIZE=200                                # Maximum events for internal history
 SAVEHIST=200                                # Maximum events in history file
 
