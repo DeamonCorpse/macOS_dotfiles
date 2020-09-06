@@ -44,10 +44,12 @@ alias gplo='git pull origin'
 alias gs='git status'
 
 
-#################### LS ####################
+#################### LS (using LSD (https://github.com/Peltoche/lsd) ####################
+alias ls='lsd'                 # Use lsd instead of ls
 alias lsa='ls -ahA'            # List all files including hidden ones without the . & .. in a human readable format
 alias lsl='ls -lhA'            # Detailed listing without the . & .. in a human readable format
 alias lsal='ls -ahlA'          # Detailed listing including hidden files without the . & .. in a human readable format
+alias lst='ls --tree'          # List files in tree-vew
 
 
 #################### MISC ####################
