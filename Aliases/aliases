@@ -41,6 +41,7 @@ alias glol='git log --graph --oneline --decorate'
 alias gp='git push'
 alias gpo='git push origin'
 alias gplo='git pull origin'
+alias groo='git remote add origin'
 alias gs='git status'
 
 
