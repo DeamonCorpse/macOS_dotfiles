@@ -15,11 +15,12 @@
 # V 2.8 - Added lf integrations. Cosmetic cleanup
 
 ####################### STAY AT THE TOP #######################
+# RUN NEOFETCH every time the terminal opens
+neofetch
+
 # ENABLE TERMINAL COLOURS
 autoload -U colors && colors
 
-# RUN NEOFETCH every time the terminal opens
-neofetch
 
 # DEFAULT ZSH CONFIGURATION Lines Added by Compinstall
 zstyle ':completion:*' completer _expand _complete _ignored _approximate
