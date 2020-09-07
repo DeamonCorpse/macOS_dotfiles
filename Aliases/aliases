@@ -28,7 +28,6 @@ alias dockps='docker ps'                                                        
 alias dockr='docker run'                                                        # Run a container
 
 
-
 #################### GIT ####################
 alias ga='git add'
 alias gb='git branch '
