@@ -1,4 +1,4 @@
-#################### BREW ####################
+#################### macOS BREW ####################
 alias bde='brew deps'                   # Lists package dependencies
 alias bh='brew help'                    # Opens help page
 alias bi='sudo brew install'            # Installs package
@@ -15,8 +15,6 @@ alias cmatrixl='cmatrix -lba' # Linux
 
 #################### DIRECTORIES ####################
 alias data='cd /Volumes/Data/'                                                 # Move to Data directory
-alias downloads='cd /Downloads'                                                # Move to macOS Downloads directory
-alias docs='cd /Volumes/home/Drive/MackbookPro Documents'                      # Move to Documents FOlder
 
 
 #################### DOCKER ####################
