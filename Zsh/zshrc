@@ -101,9 +101,6 @@ zstyle ':chpwd:*' recent-dirs-pushd true
 # Completion List @ https://github.com/zsh-users/zsh-completions/tree/master/src
 source /Users/stephane/.config/zsh_plugins/zsh-completions.plugin.zsh
 
-# Z @ https://github.com/rupa/z
-source /Users/stephane/.config/zsh_plugins/z.sh
-
 # Zsh Autosuggestions @ https://github.com/zsh-users/zsh-autosuggestions
 source /Users/stephane/.config/zsh_plugins/zsh-autosuggestions.zsh
 
